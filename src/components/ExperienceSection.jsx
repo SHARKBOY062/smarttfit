@@ -11,7 +11,7 @@ export default function ExperienceSection() {
 
         {/* CARDS */}
         <div className="grid gap-8 md:grid-cols-3 mb-14">
-          
+
           {/* CARD 1 */}
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-[1.02] transition">
             <img
@@ -50,16 +50,16 @@ export default function ExperienceSection() {
 
         </div>
 
-        {/* CTA */}
+        {/* CTA → HERO */}
         <a
-          href="#planos"
+          href="#hero"
           className="
             inline-flex 
             items-center 
             justify-center 
             bg-yellow-400 
             text-black 
-            px-16 
+            px-14 
             py-5 
             rounded-full 
             font-extrabold 

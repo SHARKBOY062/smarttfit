@@ -21,9 +21,9 @@ export default function CitySearch({ onSelectCity }) {
     onSelectCity(city)
   }
 
-  function scrollToPlans() {
+  function scrollToHero() {
     document
-      .getElementById("planos")
+      .getElementById("hero")
       ?.scrollIntoView({ behavior: "smooth" })
   }
 
@@ -34,7 +34,6 @@ export default function CitySearch({ onSelectCity }) {
         <span className="text-yellow-400">Smart Fit</span>
       </h3>
 
-      {/* INPUT */}
       <input
         type="text"
         placeholder="Digite sua cidade"
@@ -46,7 +45,6 @@ export default function CitySearch({ onSelectCity }) {
         className="w-full px-4 py-3 rounded-lg bg-[#1c1c1c] border border-white/10 focus:outline-none focus:border-yellow-400 text-white"
       />
 
-      {/* AUTOCOMPLETE */}
       {!selected && search && (
         <ul className="mt-3 space-y-2">
           {filtered.map(item => (
@@ -61,7 +59,6 @@ export default function CitySearch({ onSelectCity }) {
         </ul>
       )}
 
-      {/* RESULTADO */}
       {selected && (
         <div className="mt-6 bg-yellow-400 text-black rounded-xl p-5 text-center">
           <p className="font-bold text-lg">{selected.city}</p>
@@ -75,7 +72,7 @@ export default function CitySearch({ onSelectCity }) {
           </p>
 
           <button
-            onClick={scrollToPlans}
+            onClick={scrollToHero}
             className="mt-4 bg-black text-yellow-400 px-6 py-3 rounded-full font-extrabold hover:scale-105 transition"
           >
             Ver planos disponíveis →

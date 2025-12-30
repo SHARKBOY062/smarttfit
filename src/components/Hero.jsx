@@ -3,7 +3,10 @@ import SmallOfferCard from "./SmallOfferCard"
 
 export default function Hero({ onOpenEnrollment }) {
   return (
-    <section className="relative w-full min-h-[100svh] overflow-hidden">
+    <section
+      id="hero"
+      className="relative w-full min-h-[100svh] overflow-hidden"
+    >
       {/* VIDEO */}
       <video
         autoPlay
@@ -26,6 +29,7 @@ export default function Hero({ onOpenEnrollment }) {
 
             {/* SMALL PLANS */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 order-2 lg:order-1">
+
               <SmallOfferCard
                 title="1 mês"
                 price="79,90"
@@ -37,6 +41,7 @@ export default function Hero({ onOpenEnrollment }) {
                   })
                 }
               />
+
               <SmallOfferCard
                 title="6 meses"
                 price="297,90"
@@ -48,17 +53,7 @@ export default function Hero({ onOpenEnrollment }) {
                   })
                 }
               />
-              <SmallOfferCard
-                title="8 meses"
-                price="415,24"
-                onClick={() =>
-                  onOpenEnrollment({
-                    name: "Plano 8 meses",
-                    price: "415,24",
-                    checkoutUrl: "LINK_8_MESES"
-                  })
-                }
-              />
+
               <SmallOfferCard
                 title="1 ano"
                 price="657,97"
@@ -70,6 +65,7 @@ export default function Hero({ onOpenEnrollment }) {
                   })
                 }
               />
+
             </div>
 
             {/* DIVIDER */}
