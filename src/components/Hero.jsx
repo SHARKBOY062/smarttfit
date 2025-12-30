@@ -5,38 +5,46 @@ export default function Hero({ onOpenEnrollment }) {
   return (
     <section
       id="planos"
-      className="relative w-full min-h-[90vh] overflow-hidden"
+      className="relative w-full min-h-[100svh] overflow-hidden"
     >
-      {/* VIDEO BACKGROUND */}
+      {/* VIDEO */}
       <video
         autoPlay
         loop
         muted
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="absolute inset-0 w-full h-full object-cover"
       >
         <source src="/smartfitbannerplay.mp4" type="video/mp4" />
       </video>
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-black/60 z-10" />
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* CONTEÚDO */}
-      <div className="relative z-20 pt-20 min-h-[90vh] flex items-center">
-        <div className="max-w-7xl mx-auto px-6 w-full">
+      <div className="relative z-20 pt-24 pb-20 min-h-[100svh] flex items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
 
-          <div className="
-            grid 
-            grid-cols-1 
-            lg:grid-cols-[1fr_auto_1fr] 
-            gap-12 
-            items-center
-          ">
+          <div
+            className="
+              grid
+              grid-cols-1
+              lg:grid-cols-[1fr_auto_1fr]
+              gap-10
+              items-center
+            "
+          >
 
-            {/* PLANOS MENORES */}
-            <div className="grid grid-cols-2 gap-6 order-2 lg:order-1">
-
+            {/* SMALL CARDS */}
+            <div className="
+              grid
+              grid-cols-1
+              sm:grid-cols-2
+              gap-4
+              order-2
+              lg:order-1
+            ">
               <SmallOfferCard
                 title="1 mês"
                 price="79,90"
@@ -88,24 +96,25 @@ export default function Hero({ onOpenEnrollment }) {
                   })
                 }
               />
-
             </div>
 
-            {/* DIVISÓRIA */}
-            <div className="hidden lg:block h-[420px] w-px bg-white/30 order-2" />
+            {/* DIVISÓRIA DESKTOP */}
+            <div className="hidden lg:block h-[420px] w-px bg-white/30" />
 
-            {/* PLANO BLACK */}
+            {/* OFFER CARD */}
             <div className="flex justify-center order-1 lg:order-3">
-              <OfferCard
-                onClick={() =>
-                  onOpenEnrollment({
-                    name: "Plano Black • 3 meses",
-                    price: "149,90",
-                    description: "Acesso ilimitado Brasil + América Latina",
-                    checkoutUrl: "LINK_CHECKOUT_BLACK"
-                  })
-                }
-              />
+              <div className="w-full max-w-sm sm:max-w-md">
+                <OfferCard
+                  onClick={() =>
+                    onOpenEnrollment({
+                      name: "Plano Black • 3 meses",
+                      price: "149,90",
+                      description: "Acesso ilimitado Brasil + América Latina",
+                      checkoutUrl: "LINK_CHECKOUT_BLACK"
+                    })
+                  }
+                />
+              </div>
             </div>
 
           </div>
