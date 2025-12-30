@@ -3,48 +3,29 @@ import SmallOfferCard from "./SmallOfferCard"
 
 export default function Hero({ onOpenEnrollment }) {
   return (
-    <section
-      id="planos"
-      className="relative w-full min-h-[100svh] overflow-hidden"
-    >
+    <section className="relative w-full min-h-[100svh] overflow-hidden">
       {/* VIDEO */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src="/smartfitbannerplay.mp4" type="video/mp4" />
       </video>
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/65" />
 
-      {/* CONTEÚDO */}
-      <div className="relative z-20 pt-24 pb-20 min-h-[100svh] flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      {/* CONTENT */}
+      <div className="relative z-10 pt-24 pb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-          <div
-            className="
-              grid
-              grid-cols-1
-              lg:grid-cols-[1fr_auto_1fr]
-              gap-10
-              items-center
-            "
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-10 items-start">
 
-            {/* SMALL CARDS */}
-            <div className="
-              grid
-              grid-cols-1
-              sm:grid-cols-2
-              gap-4
-              order-2
-              lg:order-1
-            ">
+            {/* SMALL PLANS */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 order-2 lg:order-1">
               <SmallOfferCard
                 title="1 mês"
                 price="79,90"
@@ -52,12 +33,10 @@ export default function Hero({ onOpenEnrollment }) {
                   onOpenEnrollment({
                     name: "Plano 1 mês",
                     price: "79,90",
-                    description: "Acesso total às academias",
-                    checkoutUrl: "LINK_CHECKOUT_1_MES"
+                    checkoutUrl: "LINK_1_MES"
                   })
                 }
               />
-
               <SmallOfferCard
                 title="6 meses"
                 price="297,90"
@@ -65,12 +44,10 @@ export default function Hero({ onOpenEnrollment }) {
                   onOpenEnrollment({
                     name: "Plano 6 meses",
                     price: "297,90",
-                    description: "Acesso total por 6 meses",
-                    checkoutUrl: "LINK_CHECKOUT_6_MESES"
+                    checkoutUrl: "LINK_6_MESES"
                   })
                 }
               />
-
               <SmallOfferCard
                 title="8 meses"
                 price="415,24"
@@ -78,12 +55,10 @@ export default function Hero({ onOpenEnrollment }) {
                   onOpenEnrollment({
                     name: "Plano 8 meses",
                     price: "415,24",
-                    description: "Acesso total por 8 meses",
-                    checkoutUrl: "LINK_CHECKOUT_8_MESES"
+                    checkoutUrl: "LINK_8_MESES"
                   })
                 }
               />
-
               <SmallOfferCard
                 title="1 ano"
                 price="657,97"
@@ -91,30 +66,26 @@ export default function Hero({ onOpenEnrollment }) {
                   onOpenEnrollment({
                     name: "Plano 1 ano",
                     price: "657,97",
-                    description: "Acesso total por 12 meses",
-                    checkoutUrl: "LINK_CHECKOUT_1_ANO"
+                    checkoutUrl: "LINK_1_ANO"
                   })
                 }
               />
             </div>
 
-            {/* DIVISÓRIA DESKTOP */}
-            <div className="hidden lg:block h-[420px] w-px bg-white/30" />
+            {/* DIVIDER */}
+            <div className="hidden lg:block w-px h-[420px] bg-white/20" />
 
-            {/* OFFER CARD */}
-            <div className="flex justify-center order-1 lg:order-3">
-              <div className="w-full max-w-sm sm:max-w-md">
-                <OfferCard
-                  onClick={() =>
-                    onOpenEnrollment({
-                      name: "Plano Black • 3 meses",
-                      price: "149,90",
-                      description: "Acesso ilimitado Brasil + América Latina",
-                      checkoutUrl: "LINK_CHECKOUT_BLACK"
-                    })
-                  }
-                />
-              </div>
+            {/* MAIN OFFER */}
+            <div className="order-1 lg:order-3 flex justify-center">
+              <OfferCard
+                onClick={() =>
+                  onOpenEnrollment({
+                    name: "Plano Black • 3 meses",
+                    price: "149,90",
+                    checkoutUrl: "LINK_BLACK"
+                  })
+                }
+              />
             </div>
 
           </div>

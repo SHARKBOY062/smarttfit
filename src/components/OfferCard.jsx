@@ -1,91 +1,64 @@
 export default function OfferCard({ onClick }) {
   return (
-    <div
-      className="
-        bg-[#111]
-        text-white
-        rounded-3xl
-        p-6 sm:p-10
-        w-full
-        max-w-[340px] sm:max-w-md
-        shadow-[0_25px_60px_rgba(0,0,0,0.6)]
-        relative
-        hover:scale-[1.02]
-        transition
-      "
-    >
+    <div className="
+      bg-[#111]
+      text-white
+      rounded-3xl
+      w-full
+      max-w-[360px]
+      p-6 sm:p-10
+      shadow-2xl
+      relative
+    ">
+
       {/* BADGE */}
-      <div className="
-        absolute 
-        -top-3 sm:-top-4 
-        left-4 sm:left-6 
-        bg-yellow-400 
-        text-black 
-        px-3 sm:px-4 
-        py-1 
-        rounded-full 
-        text-[10px] sm:text-sm 
-        font-extrabold 
-        tracking-wide
+      <span className="
+        absolute -top-3 left-5
+        bg-yellow-400 text-black
+        px-4 py-1
+        rounded-full
+        text-xs font-extrabold
       ">
         OFERTA LIMITADA
-      </div>
+      </span>
 
-      {/* TÍTULO */}
       <h2 className="text-2xl sm:text-4xl font-extrabold leading-tight">
         Plano Trimestral <br />
         Smart Fit <span className="text-yellow-400">Black</span>
       </h2>
 
-      {/* SUBTÍTULO */}
-      <p className="mt-3 sm:mt-4 text-yellow-400 font-semibold uppercase tracking-wide text-[11px] sm:text-sm">
+      <p className="mt-4 text-yellow-400 text-xs sm:text-sm font-semibold uppercase">
         3 meses por apenas
       </p>
 
-      {/* PREÇO */}
       <div className="mt-2 flex items-end gap-2">
-        <span className="text-yellow-400 text-4xl sm:text-6xl font-extrabold leading-none">
+        <span className="text-yellow-400 text-4xl sm:text-6xl font-extrabold">
           R$ 149,90
         </span>
-        <span className="text-[10px] sm:text-sm text-gray-400 mb-1 sm:mb-2">
-          / total
-        </span>
+        <span className="text-xs text-gray-400 mb-1">/ total</span>
       </div>
 
-      {/* DESCRIÇÃO */}
-      <p className="text-[11px] sm:text-xs mt-2 text-gray-400">
+      <p className="text-xs text-gray-400 mt-2">
         (apenas os 3 primeiros meses)
       </p>
 
-      {/* BENEFÍCIOS */}
-      <ul className="mt-5 sm:mt-6 space-y-2 sm:space-y-3 text-[13px] sm:text-sm">
-        <li className="flex items-center gap-3">
-          <span className="text-yellow-400">✔</span>
-          Acesso ilimitado a todas as unidades
-        </li>
-        <li className="flex items-center gap-3">
-          <span className="text-yellow-400">✔</span>
-          Treinos personalizados no app
-        </li>
-        <li className="flex items-center gap-3">
-          <span className="text-yellow-400">✔</span>
-          Sem taxa de cancelamento
-        </li>
+      <ul className="mt-5 space-y-2 text-sm">
+        <li>✔ Acesso ilimitado a todas as unidades</li>
+        <li>✔ Treinos personalizados no app</li>
+        <li>✔ Sem taxa de cancelamento</li>
       </ul>
 
-      {/* CTA */}
       <button
-        type="button"
         onClick={onClick}
         className="
-          mt-6 sm:mt-8
+          mt-6
           w-full
           bg-yellow-400
           text-black
-          py-4 sm:py-5
+          py-4
           rounded-2xl
           font-extrabold
-          text-base sm:text-lg
+          text-base
           hover:bg-yellow-300
           transition
         "
@@ -93,8 +66,7 @@ export default function OfferCard({ onClick }) {
         MATRICULE-SE AGORA →
       </button>
 
-      {/* FOOTER */}
-      <p className="text-center mt-3 sm:mt-4 text-[10px] sm:text-xs text-gray-500 tracking-wide">
+      <p className="text-center mt-3 text-[10px] text-gray-500">
         QUEM É SMART, SABE.
       </p>
     </div>
