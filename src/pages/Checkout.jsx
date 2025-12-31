@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { track } from "../utils/pixel"
 
 /* ===============================
    CHECKOUT LINKS (OFICIAL)
@@ -47,7 +48,7 @@ export default function Checkout() {
   const [unit, setUnit] = useState(DEFAULT_UNIT)
 
   /* ===============================
-     CAPTURA DE DADOS DA URL
+     CAPTURA DE DADOS + PIXEL LOAD
   ================================ */
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
@@ -63,6 +64,18 @@ export default function Checkout() {
         setPrice(normalized)
       }
     }
+
+    /* 🔥 PIXEL — VIEW + CHECKOUT */
+    track("ViewContent", {
+      content_name: p || "Plano Smart Fit",
+      value: price,
+      currency: "BRL",
+    })
+
+    track("InitiateCheckout", {
+      value: price,
+      currency: "BRL",
+    })
 
     async function loadLocation() {
       try {
@@ -87,7 +100,7 @@ export default function Checkout() {
   }, [])
 
   /* ===============================
-     CHECKOUT FINAL (ÚNICO)
+     CHECKOUT FINAL + PIXEL
   ================================ */
   function handleCheckout() {
     const normalizedPrice = Number(price.toFixed(2))
@@ -98,7 +111,22 @@ export default function Checkout() {
       return
     }
 
-    window.location.href = checkoutLink
+    /* 🔥 PIXEL — INTENÇÃO MÁXIMA */
+    track("AddPaymentInfo", {
+      content_name: plan,
+      value: price,
+      currency: "BRL",
+    })
+
+    track("Lead", {
+      value: price,
+      currency: "BRL",
+    })
+
+    /* ⏳ Delay para não perder evento */
+    setTimeout(() => {
+      window.location.href = checkoutLink
+    }, 300)
   }
 
   return (
