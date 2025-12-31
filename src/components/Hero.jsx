@@ -37,7 +37,7 @@ export default function Hero({ onOpenEnrollment }) {
                   onOpenEnrollment({
                     name: "Plano 1 mês",
                     price: "79,90",
-                    checkoutUrl: "LINK_1_MES"
+                    planId: "1-mes"
                   })
                 }
               />
@@ -49,7 +49,7 @@ export default function Hero({ onOpenEnrollment }) {
                   onOpenEnrollment({
                     name: "Plano 6 meses",
                     price: "297,90",
-                    checkoutUrl: "LINK_6_MESES"
+                    planId: "6-meses"
                   })
                 }
               />
@@ -61,7 +61,7 @@ export default function Hero({ onOpenEnrollment }) {
                   onOpenEnrollment({
                     name: "Plano 1 ano",
                     price: "657,97",
-                    checkoutUrl: "LINK_1_ANO"
+                    planId: "1-ano"
                   })
                 }
               />
@@ -78,7 +78,7 @@ export default function Hero({ onOpenEnrollment }) {
                   onOpenEnrollment({
                     name: "Plano Black • 3 meses",
                     price: "149,90",
-                    checkoutUrl: "LINK_BLACK"
+                    planId: "black-3-meses"
                   })
                 }
               />
